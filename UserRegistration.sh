@@ -1,13 +1,14 @@
 #!/bin/bash -x
 
-echo "enter last name :"
-read name
+echo "enter a email"
+read email
 
-pattern="^[[:upper:]]{1}[a-zA-Z]{3,}$"
-if [[ $name =~ $pattern ]]
+pattern="^[0-9a-zA-Z]+([._+-][0-9a-zA-Z]+)*[@][0-9a-zA-Z]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2})*$"
+
+if [[ $email =~ $pattern ]]
 then
-        echo "valid lastname"
+        echo "valid"
 else
-        echo "invalid lastname"
+        echo "invalid"
 fi
 
