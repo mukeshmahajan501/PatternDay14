@@ -1,15 +1,17 @@
-
-#validate password with all cases
+#multiple email tested
 
 #!/bin/bash -x
-echo "enter your password"
-read s
 
-if [[ ${#s} -ge 8 && "$s" == *[[:lower:]]* && "$s" == *[[:upper:]]* && "$s" == *[0-9]* && "$s" == *[@#%^-*+/]* ]]
+echo "enter email"
+read email
+
+
+pattern="^[0-9a-zA-z]+([._+-][0-9a-zA-Z]+)*@[0-9a-zA-Z]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2,}){1}*$"
+if [[ $email =~ $pattern ]]
 then
-        echo "valid password"
+        echo "valid"
 else
-        echo "inavlid password"
+        echo "invalid"
 fi
 
 
