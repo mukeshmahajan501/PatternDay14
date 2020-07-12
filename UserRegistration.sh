@@ -6,7 +6,7 @@ read name
 pattern="^[[:upper:]]{1}[a-zA-Z]{3,}$"
 if [[ $name =~ $pattern ]]
 then
-	echo "valid"
+        echo "valid"
 else
-	echo "invalid"
+        echo "invalid"
 fi
