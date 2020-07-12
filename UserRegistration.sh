@@ -36,15 +36,16 @@ fi
 //validate email 
 #!/bin/bash -x
 
-echo "enter a email"
-read email
+echo "enter a mobile number: "
+read no
 
-pattern="^[0-9a-zA-Z]+([._+-][0-9a-zA-Z]+)*[@][0-9a-zA-Z]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2})*$"
-
-if [[ $email =~ $pattern ]]
+pattern="^[0-9]{2}+[\s]{1}+[0-9]{10}$"
+if [[ ${#no} -eq 13 && $no=~$pattern ]]
 then
         echo "valid"
 else
         echo "invalid"
 fi
+
+
 
